@@ -1,0 +1,3 @@
+template-file-path: AWSTemplateFormatVersion1.yaml
+parameters: {}
+tags: {}
