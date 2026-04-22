@@ -45,19 +45,10 @@ Resources:
         - !Ref WebServerSecurityGroup
       UserData: !Base64 |
         #!/bin/bash
-        sudo yum update -y
-        sudo yum install -y httpd
-        sudo systemctl start httpd
-        sudo systemctl enable httpd
-        sudo yum install -y ruby wget
-        cd /home/ec2-user
-        wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
-        chmod +x ./install
-        sudo ./install auto
-        sudo systemctl enable codedeploy-agent
-        sudo systemctl start codedeploy-agent
-        echo 'httpd and codedeploy installed!'
-
+        yum update -y
+        yum install -y httpd
+        systemctl start httpd
+        systemctl enable httpd
         
 Outputs:
   WebsiteURL:
