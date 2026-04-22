@@ -44,7 +44,7 @@ Resources:
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
       Tags:
-        - Key: Name
+        - Key: "Name"
           Value: "IaCWebServer"
       UserData: !Base64 |
         #!/bin/bash
