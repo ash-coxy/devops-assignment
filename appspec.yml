@@ -3,6 +3,3 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-hooks:
-  AfterInstall:
-    - echo "Deploy done!"
