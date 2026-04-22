@@ -43,6 +43,9 @@ Resources:
       InstanceType: !Ref InstanceType
       SecurityGroupIds:
         - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: "IaCWebServer"
       UserData: !Base64 |
         #!/bin/bash
         sudo yum update -y
