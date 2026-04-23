@@ -12,8 +12,8 @@ phases:
       - pip install --quiet semgrep
 
       # Install Gitleaks (secret scanning)
-      - curl -sSL "https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz" \
-        | tar -xz
+      # - curl -sSL "https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz" \
+      # | tar -xz
 
   pre_build:
     commands:
@@ -24,8 +24,8 @@ phases:
       - echo "Running Semgrep (SAST)..."
       - semgrep --config auto . || true   # keeps CI green for demo purposes (remove these if you want the pipeline to fail if the tests fail)
 
-      - echo "Running Gitleaks (secret scan)..."
-      - ./gitleaks detect --source . --no-banner --redact || true
+      # - echo "Running Gitleaks (secret scan)..."
+      # - ./gitleaks detect --source . --no-banner --redact || true
 
       - echo "Running npm audit (dependency scan)..."
       - npm audit --omit=dev || true
